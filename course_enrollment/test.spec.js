@@ -1,17 +1,13 @@
 import { test, expect } from '@playwright/test';
 
 test('test', async ({ page }) => {
-  await page.goto('https://www.saucedemo.com/');
-  await page.locator('[data-test="username"]').click();
-  await page.locator('[data-test="username"]').fill('standard_user');
-  await page.locator('[data-test="password"]').click();
-  await page.locator('[data-test="password"]').fill('Secret_sauce');
-  await page.locator('[data-test="login-button"]').click();
-  await page.locator('[data-test="password"]').fill('secret_sauce');
-  await page.locator('[data-test="password"]').press('Enter');
-  await page.locator('[data-test="login-button"]').click();
-  await page.locator('[data-test="item-4-img-link"]').click();
-  await page.locator('[data-test="back-to-products"]').click();
-  await page.getByRole('button', { name: 'Open Menu' }).click();
-  await page.locator('[data-test="logout-sidebar-link"]').click();
+  await page.goto('https://tftr.josce.mil/');
+  await page.goto('https://mytraining-keycloak.cce.af.mil/auth/realms/sso/protocol/openid-connect/auth?client_id=tftr_production&redirect_uri=https%3A%2F%2Ftftr.josce.mil%2F&state=3b5a8b14-3245-46cd-8bfa-72e87120e5dd&response_mode=fragment&response_type=code&scope=openid&nonce=6f359743-a4c0-4632-acd2-3abe41bbf624');
+  await page.goto('https://federation.prod.cce.af.mil/pool/sso/authenticate/msg/19?RelayState=Kt2_n_eJxbI8cSm0V1Lf6rWwj2weD0_ubPdRqbpA270.bJgOXpeWif4.ej-lhq0_QDOjHwWoIXQZeA&SAMLRequest=jZJBb9swDIX%2FiqG7LcdNZ0%2BIA3gNhgXohiBNd%2BhlkCV6FSJLnkhvzb%2BfYndodmjRm0A96nt81AplbwfRjPTo9vBrBKTkqbcOxXRRszE44SUaFE72gIKUuGu%2B3ooiy8UQPHnlLZtb3hZLRAhkvGMXgHe3NP%2BON97h2EO4g%2FDbKLjf39bskWhAwXl%2FoiCNM%2B5neoSTsl4eM6Ugk13WG8tlHJIHkLZHjuh5G%2FwRAj%2F74OD04I2jSCIKph0JZlJ87Bm1dRqeapazZBNTMk6e7bzAO9AQploWc9GX4MF7OxEn1NkGODJKErDksw8Kpvhr1kmLsbTd1Gy7%2BSGLj8vqwyJP9dXVIl2WukorqFQqr8slqLbsoNVRjDhGa0jSUc2KvFimeZUW5aHIRV6JvMiq6%2FKBJbvnXX0yTseZ3g6%2BnUUovhwOu3QP2gRQMZvvEHAaOorYenUeR0wGwvqdO3iJf8Uv21fzP%2FwWrWw3O2%2BNOiWNtf7PTewgqBmFcU6rl%2FS6%2BUW2mCpGp90kFdBLYxutAyAyvp6p%2F3%2F49V8%3D&u=https%3A%2F%2Fmytraining-keycloak.cce.af.mil%2Frealms%2Fsso');
+  await page.getByRole('button', { name: 'I Agree' }).click();
+  await page.goto('https://federation.prod.cce.af.mil/pool/sso/federate?RelayState=Kt2_n_eJxbI8cSm0V1Lf6rWwj2weD0_ubPdRqbpA270.bJgOXpeWif4.ej-lhq0_QDOjHwWoIXQZeA&SAMLRequest=jZJBb9swDIX%2FiqG7LcdNZ0%2BIA3gNhgXohiBNd%2BhlkCV6FSJLnkhvzb%2BfYndodmjRm0A96nt81AplbwfRjPTo9vBrBKTkqbcOxXRRszE44SUaFE72gIKUuGu%2B3ooiy8UQPHnlLZtb3hZLRAhkvGMXgHe3NP%2BON97h2EO4g%2FDbKLjf39bskWhAwXl%2FoiCNM%2B5neoSTsl4eM6Ugk13WG8tlHJIHkLZHjuh5G%2FwRAj%2F74OD04I2jSCIKph0JZlJ87Bm1dRqeapazZBNTMk6e7bzAO9AQploWc9GX4MF7OxEn1NkGODJKErDksw8Kpvhr1kmLsbTd1Gy7%2BSGLj8vqwyJP9dXVIl2WukorqFQqr8slqLbsoNVRjDhGa0jSUc2KvFimeZUW5aHIRV6JvMiq6%2FKBJbvnXX0yTseZ3g6%2BnUUovhwOu3QP2gRQMZvvEHAaOorYenUeR0wGwvqdO3iJf8Uv21fzP%2FwWrWw3O2%2BNOiWNtf7PTewgqBmFcU6rl%2FS6%2BUW2mCpGp90kFdBLYxutAyAyvp6p%2F3%2F49V8%3D&did_auth=1&m=&r=&u=https%3A%2F%2Fmytraining-keycloak.cce.af.mil%2Frealms%2Fsso');
+  await page.goto('https://tftr.josce.mil/#state=3b5a8b14-3245-46cd-8bfa-72e87120e5dd&session_state=bbeae278-cdd4-4361-8b6d-00584207eba7&code=0dd0b9d1-3673-44e4-9a07-3c239ca9bbe7.bbeae278-cdd4-4361-8b6d-00584207eba7.7a3fa586-ad3f-4033-a31f-05a821741978');
+  await page.goto('https://tftr.josce.mil/');
+  await page.goto('https://tftr.josce.mil/#/Training');
+  await page.goto('https://tftr.josce.mil/#/Training/Profile');
 });
